@@ -37,12 +37,14 @@
   <body>
     <nav>
       <div class="row">
+        <!-- grid, force siblings away, put up to left corner -->
         <div class="col-3-sm mr-3 ml-3 pl-4">
-          <a href="highscore.html"><h2>High Scores</h2></a>
+          <a href="highscore.html"><h2><small>High Scores</small></h2></a>
           <h3 id="scoreTracker">Score</h3>
         </div>
+        <!--grid, force siblings away, put up to right corner -->
         <div class="col-3-sm ml-auto mr-4">
-          <h1>timer <span id="timer">75</span></h1>
+          <h1><small>timer </small><span id="timer"><small>75</small></span></h1>
         </div>
       </div>
     </nav>
@@ -55,6 +57,33 @@
         </small>
         </h3>
         <div>
+          <form class="form-group text-center hideMe" action="highScore.html" id="forms">
+          <h4 class= float-left>Enter Your Initials</h4>
+          <input type="text" id="initialText" label="Initials">
+          <input id="submitButton" type="submit">
+          </form>
+  </div>
+      </div>
+
+      <div id="disappearDiv">
+        <div class= "row py-1 d-flex justify-content-center">
+<button type="button" class="btn btn-secondary" id="timerStart">Begin Quiz</button>
+</div>
+<div class= "row py-1">
+<button type="button" class="btn btn-secondary hideMe potentialAnswer" id="answer1">Button 1</button>
+</div>
+<div class= "row py-1">
+<button type="button" class="btn btn-secondary hideMe potentialAnswer" id="answer2">Button 2</button>
+</div>
+<div class= "row py-1">
+<button type="button" class="btn btn-secondary hideMe potentialAnswer" id="answer3">Button 3</button>
+</div>
+<div class= "row py-1">
+<button type="button" class="btn btn-secondary hideMe potentialAnswer" id="answer4">Button 4</button>
+<div class="hideMe line" id="lineId"> </div>
+        <h3 class="hideMe text-center" id="answerDisplay">Correct Answer?</h3>
+</div>
+</div>
 
 
     </main>

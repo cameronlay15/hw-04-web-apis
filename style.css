@@ -1,0 +1,10 @@
+.hideMe{
+    visibility:hidden;
+}
+.unhideMe{
+    visibility: visible;
+}
+.line{
+    height: 2px;
+    background: black;
+}
