@@ -1,5 +1,5 @@
 
-
+// created variables
 var containerDiv = document.querySelector(".m-auto")
 
 var countDownNumbDisp = document.querySelector("#timer");
@@ -20,46 +20,7 @@ var posiAnswer4 = document.querySelector("#answer4");
 
 var counter = 0;
 
-document.querySelectorAll(".potentialAnswer").forEach(function(button) {
-    // add an event listener to that button
 
-    button.addEventListener('click', function() {
-    
-        if(button.dataset.correct==="yes"){
-        counter++
-        gameArray[counter]
-        console.log(counter)
-        // &&
-        // (posiAnswer4.textContent == gameArray[0]["rightAnswer1"])
-    if(counter === 1){
-        pageChange2();
-        scoreTabulator()
-    }else if(counter === 2){
-        pageChange3();
-        scoreTabulator()
-    }
-    else if(counter===3){
-        pageChange3();
-        scoreTabulator()
-    }
-    else if(counter===4){
-        pageChange4();
-        scoreTabulator()
-    }
-    else if(counter===5){
-        pageChange5();
-    }
-    }else{
-                secondsLeft= secondsLeft -10
-            }  
-        })
-        
-        // do something
-        // if the answer is right
-        // --  go to next question
-        // else
-        // -- decrement 10 seconds
-    })
 
 
 var submissionButton = document.querySelector("submitButton");
@@ -73,7 +34,7 @@ var currentPage = 0;
 var trackedScore = 0;
 
 
-
+// quiz quewstions
 var gameArray = [
     {
         question: "Commonly used data types DO NOT Include:",
@@ -107,7 +68,7 @@ var gameArray = [
      
 
 ]
-
+// timer info
 var secondsLeft = 75;
 var wrongAnswerLoss = secondsLeft - 10;
 
@@ -128,13 +89,13 @@ function setTimer() {
     }, 1000)
 }
 
-// High Scores
+// High Scores calculator
 function scoreTabulator() {
     scoreTab = (100) + (secondsLeft * 10)
     trackedScore = trackedScore + scoreTab
     userScore.textContent = (trackedScore)
 }
-
+// credentials for first page
 function pageChange1() {
     timerButton.classList.add("hideMe");
     subHeadDisp.classList.add("hideMe");
@@ -153,7 +114,7 @@ function pageChange1() {
     posiAnswer3.textContent = gameArray[0]["answer3"];
     posiAnswer4.textContent = gameArray[0]["correctAnswer1"];
 }
-
+// credentials for trasition 1
 function pageChange2() {
     mainHeadDisp.textContent = gameArray[1]["question"];
     posiAnswer1.textContent = gameArray[1]["answer1"];
@@ -161,6 +122,7 @@ function pageChange2() {
     posiAnswer3.textContent = gameArray[1]["answer3"];
     posiAnswer4.textContent = gameArray[1]["correctAnswer2"];
 }
+// credentials for transition 2
 function pageChange3() {
     mainHeadDisp.textContent = gameArray[2]["question"];
     posiAnswer1.textContent = gameArray[2]["answer1"];
@@ -168,6 +130,7 @@ function pageChange3() {
     posiAnswer3.textContent = gameArray[2]["answer3"];
     posiAnswer4.textContent = gameArray[2]["correctAnswer3"];
 }
+// credentials for transition 3
 function pageChange4() {
     mainHeadDisp.textContent = gameArray[3]["question"];
     posiAnswer1.textContent = gameArray[3]["answer1"];
@@ -175,7 +138,7 @@ function pageChange4() {
     posiAnswer3.textContent = gameArray[3]["answer3"];
     posiAnswer4.textContent = gameArray[3]["correctAnswer4"];
 }
-
+// credentials for transition 4
 function pageChange5() {
     answerDisp.textContent = ("Quiz Complete!");
     document.getElementById("disappearDiv").remove();
@@ -188,4 +151,35 @@ function pageChange5() {
     answerDisp.classList.add("hideMe");
     formSubz.classList.remove("hideMe");
 }    
+document.querySelectorAll(".potentialAnswer").forEach(function(button) {
+    // add an event listener to that button
 
+    button.addEventListener('click', function() {
+    // transition function
+        if(button.dataset.correct==="yes"){
+        counter++
+        gameArray[counter]
+        console.log(counter)
+        
+    if(counter === 1){
+        pageChange2();
+        scoreTabulator()
+    }else if(counter === 2){
+        pageChange3();
+        scoreTabulator()
+    }
+    else if(counter===3){
+        pageChange4();
+        scoreTabulator()
+    }
+    else if(counter===4){
+        pageChange5();
+        scoreTabulator()
+ 
+    }
+    }else{
+                secondsLeft= secondsLeft -10
+            }  
+        })
+    
+    })
