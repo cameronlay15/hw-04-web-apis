@@ -142,14 +142,14 @@ function pageChange4() {
 function pageChange5() {
     answerDisp.textContent = ("Quiz Complete!");
     document.getElementById("disappearDiv").remove();
-    document.getElementById("lineId").remove();
+    // document.getElementById("lineId").remove();
     mainHeadDisp.classList.remove("text-center");
-    mainHeadDisp.textContent = ("All done!");
+    mainHeadDisp.textContent = ("Complete!");
     subHeadDisp.classList.remove("text-center");
     subHeadDisp.textContent = ("Score: " + trackedScore);
     subHeadDisp.classList.remove("hideMe");
     answerDisp.classList.add("hideMe");
-    formSubz.classList.remove("hideMe");
+    formSubs.classList.remove("hideMe");
 }    
 document.querySelectorAll(".potentialAnswer").forEach(function(button) {
     // add an event listener to that button
@@ -183,3 +183,4 @@ document.querySelectorAll(".potentialAnswer").forEach(function(button) {
         })
     
     })
+    
