@@ -175,6 +175,7 @@ document.querySelectorAll(".potentialAnswer").forEach(function(button) {
     else if(counter===4){
         pageChange5();
         scoreTabulator()
+        secondsLeft=0;
  
     }
     }else{
